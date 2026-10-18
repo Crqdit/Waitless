@@ -1,0 +1,926 @@
+{
+ "versiune": 2,
+ "setup": {
+  "treceri": {
+   ":6413766796_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":12043430980_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":10616411211_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":10616411210_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":3086446449_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":12080013339_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":12159533179_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":6413766794_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":9804260103_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":10616411212_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":2283248927_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":6413766797_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":12080013341_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":cluster_2942970567_9840046292_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":9804260085_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":6413766797_c1": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":11718386460_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":9804260097_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":9840046264_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   },
+   ":11718386462_c0": {
+    "mod": "inteligent",
+    "reguli": "Fara hold"
+   }
+  },
+  "reguli": {
+   "Sistemul tau (hold 12 s)": {},
+   "Sistemul tau + fix 5": {
+    "fix5": true
+   },
+   "Sistemul tau + fix 6, 7, 8": {
+    "fix6": true,
+    "fix7": true,
+    "fix8": true
+   },
+   "Fix 5 + 6 + 7 + 8": {
+    "fix5": true,
+    "fix6": true,
+    "fix7": true,
+    "fix8": true
+   },
+   "Fara hold": {
+    "hold": "none"
+   }
+  },
+  "perechi": [
+   [
+    ":12043430980_c0",
+    ":6413766796_c0"
+   ],
+   [
+    ":10616411210_c0",
+    ":10616411211_c0"
+   ]
+  ],
+  "semafor": {
+   "verde_masini": 45.0,
+   "galben": 3.0,
+   "tot_rosu": 2.0,
+   "walk": 10.0,
+   "clear": 5.0,
+   "la_cerere": false
+  },
+  "nerabdare": null,
+  "nerabdare_dupa": 40.0,
+  "nerabdare_prob": 0.05,
+  "fara_faza_pietoni": true
+ },
+ "comparare": [
+  {
+   "nume": "Original (ca in SUMO)",
+   "setup": {
+    "treceri": {
+     ":10616411210_c0": {
+      "mod": "original"
+     },
+     ":10616411211_c0": {
+      "mod": "original"
+     },
+     ":10616411212_c0": {
+      "mod": "original"
+     },
+     ":11718386460_c0": {
+      "mod": "original"
+     },
+     ":11718386462_c0": {
+      "mod": "original"
+     },
+     ":12043430980_c0": {
+      "mod": "original"
+     },
+     ":12080013339_c0": {
+      "mod": "original"
+     },
+     ":12080013341_c0": {
+      "mod": "original"
+     },
+     ":12159533179_c0": {
+      "mod": "original"
+     },
+     ":2283248927_c0": {
+      "mod": "original"
+     },
+     ":3086446449_c0": {
+      "mod": "original"
+     },
+     ":6413766794_c0": {
+      "mod": "original"
+     },
+     ":6413766796_c0": {
+      "mod": "original"
+     },
+     ":6413766797_c0": {
+      "mod": "original"
+     },
+     ":6413766797_c1": {
+      "mod": "original"
+     },
+     ":9804260085_c0": {
+      "mod": "original"
+     },
+     ":9804260097_c0": {
+      "mod": "original"
+     },
+     ":9804260103_c0": {
+      "mod": "original"
+     },
+     ":9840046264_c0": {
+      "mod": "original"
+     },
+     ":cluster_2942970567_9840046292_c0": {
+      "mod": "original"
+     }
+    },
+    "reguli": {
+     "Sistemul tau (hold 12 s)": {},
+     "Sistemul tau + fix 5": {
+      "fix5": true
+     },
+     "Sistemul tau + fix 6, 7, 8": {
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fix 5 + 6 + 7 + 8": {
+      "fix5": true,
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fara hold": {
+      "hold": "none"
+     }
+    },
+    "perechi": [
+     [
+      ":12043430980_c0",
+      ":6413766796_c0"
+     ],
+     [
+      ":10616411210_c0",
+      ":10616411211_c0"
+     ]
+    ],
+    "semafor": {
+     "verde_masini": 45.0,
+     "galben": 3.0,
+     "tot_rosu": 2.0,
+     "walk": 10.0,
+     "clear": 5.0,
+     "la_cerere": false
+    },
+    "nerabdare": null,
+    "nerabdare_dupa": 40.0,
+    "nerabdare_prob": 0.05,
+    "fara_faza_pietoni": true
+   }
+  },
+  {
+   "nume": "Toate zebre",
+   "setup": {
+    "treceri": {
+     ":10616411210_c0": {
+      "mod": "zebra"
+     },
+     ":10616411211_c0": {
+      "mod": "zebra"
+     },
+     ":10616411212_c0": {
+      "mod": "zebra"
+     },
+     ":11718386460_c0": {
+      "mod": "zebra"
+     },
+     ":11718386462_c0": {
+      "mod": "zebra"
+     },
+     ":12043430980_c0": {
+      "mod": "zebra"
+     },
+     ":12080013339_c0": {
+      "mod": "zebra"
+     },
+     ":12080013341_c0": {
+      "mod": "zebra"
+     },
+     ":12159533179_c0": {
+      "mod": "zebra"
+     },
+     ":2283248927_c0": {
+      "mod": "zebra"
+     },
+     ":3086446449_c0": {
+      "mod": "zebra"
+     },
+     ":6413766794_c0": {
+      "mod": "zebra"
+     },
+     ":6413766796_c0": {
+      "mod": "zebra"
+     },
+     ":6413766797_c0": {
+      "mod": "zebra"
+     },
+     ":6413766797_c1": {
+      "mod": "zebra"
+     },
+     ":9804260085_c0": {
+      "mod": "zebra"
+     },
+     ":9804260097_c0": {
+      "mod": "zebra"
+     },
+     ":9804260103_c0": {
+      "mod": "zebra"
+     },
+     ":9840046264_c0": {
+      "mod": "zebra"
+     },
+     ":cluster_2942970567_9840046292_c0": {
+      "mod": "zebra"
+     }
+    },
+    "reguli": {
+     "Sistemul tau (hold 12 s)": {},
+     "Sistemul tau + fix 5": {
+      "fix5": true
+     },
+     "Sistemul tau + fix 6, 7, 8": {
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fix 5 + 6 + 7 + 8": {
+      "fix5": true,
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fara hold": {
+      "hold": "none"
+     }
+    },
+    "perechi": [
+     [
+      ":12043430980_c0",
+      ":6413766796_c0"
+     ],
+     [
+      ":10616411210_c0",
+      ":10616411211_c0"
+     ]
+    ],
+    "semafor": {
+     "verde_masini": 45.0,
+     "galben": 3.0,
+     "tot_rosu": 2.0,
+     "walk": 10.0,
+     "clear": 5.0,
+     "la_cerere": false
+    },
+    "nerabdare": null,
+    "nerabdare_dupa": 40.0,
+    "nerabdare_prob": 0.05,
+    "fara_faza_pietoni": true
+   }
+  },
+  {
+   "nume": "Semafoare normale",
+   "setup": {
+    "treceri": {
+     ":10616411210_c0": {
+      "mod": "semafor"
+     },
+     ":10616411211_c0": {
+      "mod": "semafor"
+     },
+     ":10616411212_c0": {
+      "mod": "semafor"
+     },
+     ":11718386460_c0": {
+      "mod": "semafor"
+     },
+     ":11718386462_c0": {
+      "mod": "semafor"
+     },
+     ":12043430980_c0": {
+      "mod": "semafor"
+     },
+     ":12080013339_c0": {
+      "mod": "semafor"
+     },
+     ":12080013341_c0": {
+      "mod": "semafor"
+     },
+     ":12159533179_c0": {
+      "mod": "semafor"
+     },
+     ":2283248927_c0": {
+      "mod": "semafor"
+     },
+     ":3086446449_c0": {
+      "mod": "semafor"
+     },
+     ":6413766794_c0": {
+      "mod": "semafor"
+     },
+     ":6413766796_c0": {
+      "mod": "semafor"
+     },
+     ":6413766797_c0": {
+      "mod": "semafor"
+     },
+     ":6413766797_c1": {
+      "mod": "semafor"
+     },
+     ":9804260085_c0": {
+      "mod": "semafor"
+     },
+     ":9804260097_c0": {
+      "mod": "semafor"
+     },
+     ":9804260103_c0": {
+      "mod": "semafor"
+     },
+     ":9840046264_c0": {
+      "mod": "semafor"
+     },
+     ":cluster_2942970567_9840046292_c0": {
+      "mod": "semafor"
+     }
+    },
+    "reguli": {
+     "Sistemul tau (hold 12 s)": {},
+     "Sistemul tau + fix 5": {
+      "fix5": true
+     },
+     "Sistemul tau + fix 6, 7, 8": {
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fix 5 + 6 + 7 + 8": {
+      "fix5": true,
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fara hold": {
+      "hold": "none"
+     }
+    },
+    "perechi": [
+     [
+      ":12043430980_c0",
+      ":6413766796_c0"
+     ],
+     [
+      ":10616411210_c0",
+      ":10616411211_c0"
+     ]
+    ],
+    "semafor": {
+     "verde_masini": 45.0,
+     "galben": 3.0,
+     "tot_rosu": 2.0,
+     "walk": 10.0,
+     "clear": 5.0,
+     "la_cerere": false
+    },
+    "nerabdare": null,
+    "nerabdare_dupa": 40.0,
+    "nerabdare_prob": 0.05,
+    "fara_faza_pietoni": true
+   }
+  },
+  {
+   "nume": "Sistemul nostru (8 treceri): Sistemul tau (hold 12 s)",
+   "setup": {
+    "treceri": {
+     ":10616411210_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau (hold 12 s)"
+     },
+     ":10616411211_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau (hold 12 s)"
+     },
+     ":10616411212_c0": {
+      "mod": "original"
+     },
+     ":11718386460_c0": {
+      "mod": "original"
+     },
+     ":11718386462_c0": {
+      "mod": "original"
+     },
+     ":12043430980_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau (hold 12 s)"
+     },
+     ":12080013339_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau (hold 12 s)"
+     },
+     ":12080013341_c0": {
+      "mod": "original"
+     },
+     ":12159533179_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau (hold 12 s)"
+     },
+     ":2283248927_c0": {
+      "mod": "original"
+     },
+     ":3086446449_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau (hold 12 s)"
+     },
+     ":6413766794_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau (hold 12 s)"
+     },
+     ":6413766796_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau (hold 12 s)"
+     },
+     ":6413766797_c0": {
+      "mod": "original"
+     },
+     ":6413766797_c1": {
+      "mod": "original"
+     },
+     ":9804260085_c0": {
+      "mod": "original"
+     },
+     ":9804260097_c0": {
+      "mod": "original"
+     },
+     ":9804260103_c0": {
+      "mod": "original"
+     },
+     ":9840046264_c0": {
+      "mod": "original"
+     },
+     ":cluster_2942970567_9840046292_c0": {
+      "mod": "original"
+     }
+    },
+    "reguli": {
+     "Sistemul tau (hold 12 s)": {},
+     "Sistemul tau + fix 5": {
+      "fix5": true
+     },
+     "Sistemul tau + fix 6, 7, 8": {
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fix 5 + 6 + 7 + 8": {
+      "fix5": true,
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fara hold": {
+      "hold": "none"
+     }
+    },
+    "perechi": [
+     [
+      ":12043430980_c0",
+      ":6413766796_c0"
+     ],
+     [
+      ":10616411210_c0",
+      ":10616411211_c0"
+     ]
+    ],
+    "semafor": {
+     "verde_masini": 45.0,
+     "galben": 3.0,
+     "tot_rosu": 2.0,
+     "walk": 10.0,
+     "clear": 5.0,
+     "la_cerere": false
+    },
+    "nerabdare": null,
+    "nerabdare_dupa": 40.0,
+    "nerabdare_prob": 0.05,
+    "fara_faza_pietoni": true
+   }
+  },
+  {
+   "nume": "Sistemul nostru (8 treceri): Sistemul tau + fix 5",
+   "setup": {
+    "treceri": {
+     ":10616411210_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 5"
+     },
+     ":10616411211_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 5"
+     },
+     ":10616411212_c0": {
+      "mod": "original"
+     },
+     ":11718386460_c0": {
+      "mod": "original"
+     },
+     ":11718386462_c0": {
+      "mod": "original"
+     },
+     ":12043430980_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 5"
+     },
+     ":12080013339_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 5"
+     },
+     ":12080013341_c0": {
+      "mod": "original"
+     },
+     ":12159533179_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 5"
+     },
+     ":2283248927_c0": {
+      "mod": "original"
+     },
+     ":3086446449_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 5"
+     },
+     ":6413766794_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 5"
+     },
+     ":6413766796_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 5"
+     },
+     ":6413766797_c0": {
+      "mod": "original"
+     },
+     ":6413766797_c1": {
+      "mod": "original"
+     },
+     ":9804260085_c0": {
+      "mod": "original"
+     },
+     ":9804260097_c0": {
+      "mod": "original"
+     },
+     ":9804260103_c0": {
+      "mod": "original"
+     },
+     ":9840046264_c0": {
+      "mod": "original"
+     },
+     ":cluster_2942970567_9840046292_c0": {
+      "mod": "original"
+     }
+    },
+    "reguli": {
+     "Sistemul tau (hold 12 s)": {},
+     "Sistemul tau + fix 5": {
+      "fix5": true
+     },
+     "Sistemul tau + fix 6, 7, 8": {
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fix 5 + 6 + 7 + 8": {
+      "fix5": true,
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fara hold": {
+      "hold": "none"
+     }
+    },
+    "perechi": [
+     [
+      ":12043430980_c0",
+      ":6413766796_c0"
+     ],
+     [
+      ":10616411210_c0",
+      ":10616411211_c0"
+     ]
+    ],
+    "semafor": {
+     "verde_masini": 45.0,
+     "galben": 3.0,
+     "tot_rosu": 2.0,
+     "walk": 10.0,
+     "clear": 5.0,
+     "la_cerere": false
+    },
+    "nerabdare": null,
+    "nerabdare_dupa": 40.0,
+    "nerabdare_prob": 0.05,
+    "fara_faza_pietoni": true
+   }
+  },
+  {
+   "nume": "Sistemul nostru (8 treceri): Sistemul tau + fix 6, 7, 8",
+   "setup": {
+    "treceri": {
+     ":10616411210_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 6, 7, 8"
+     },
+     ":10616411211_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 6, 7, 8"
+     },
+     ":10616411212_c0": {
+      "mod": "original"
+     },
+     ":11718386460_c0": {
+      "mod": "original"
+     },
+     ":11718386462_c0": {
+      "mod": "original"
+     },
+     ":12043430980_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 6, 7, 8"
+     },
+     ":12080013339_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 6, 7, 8"
+     },
+     ":12080013341_c0": {
+      "mod": "original"
+     },
+     ":12159533179_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 6, 7, 8"
+     },
+     ":2283248927_c0": {
+      "mod": "original"
+     },
+     ":3086446449_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 6, 7, 8"
+     },
+     ":6413766794_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 6, 7, 8"
+     },
+     ":6413766796_c0": {
+      "mod": "inteligent",
+      "reguli": "Sistemul tau + fix 6, 7, 8"
+     },
+     ":6413766797_c0": {
+      "mod": "original"
+     },
+     ":6413766797_c1": {
+      "mod": "original"
+     },
+     ":9804260085_c0": {
+      "mod": "original"
+     },
+     ":9804260097_c0": {
+      "mod": "original"
+     },
+     ":9804260103_c0": {
+      "mod": "original"
+     },
+     ":9840046264_c0": {
+      "mod": "original"
+     },
+     ":cluster_2942970567_9840046292_c0": {
+      "mod": "original"
+     }
+    },
+    "reguli": {
+     "Sistemul tau (hold 12 s)": {},
+     "Sistemul tau + fix 5": {
+      "fix5": true
+     },
+     "Sistemul tau + fix 6, 7, 8": {
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fix 5 + 6 + 7 + 8": {
+      "fix5": true,
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fara hold": {
+      "hold": "none"
+     }
+    },
+    "perechi": [
+     [
+      ":12043430980_c0",
+      ":6413766796_c0"
+     ],
+     [
+      ":10616411210_c0",
+      ":10616411211_c0"
+     ]
+    ],
+    "semafor": {
+     "verde_masini": 45.0,
+     "galben": 3.0,
+     "tot_rosu": 2.0,
+     "walk": 10.0,
+     "clear": 5.0,
+     "la_cerere": false
+    },
+    "nerabdare": null,
+    "nerabdare_dupa": 40.0,
+    "nerabdare_prob": 0.05,
+    "fara_faza_pietoni": true
+   }
+  },
+  {
+   "nume": "Sistemul nostru (8 treceri): Fix 5 + 6 + 7 + 8",
+   "setup": {
+    "treceri": {
+     ":10616411210_c0": {
+      "mod": "inteligent",
+      "reguli": "Fix 5 + 6 + 7 + 8"
+     },
+     ":10616411211_c0": {
+      "mod": "inteligent",
+      "reguli": "Fix 5 + 6 + 7 + 8"
+     },
+     ":10616411212_c0": {
+      "mod": "original"
+     },
+     ":11718386460_c0": {
+      "mod": "original"
+     },
+     ":11718386462_c0": {
+      "mod": "original"
+     },
+     ":12043430980_c0": {
+      "mod": "inteligent",
+      "reguli": "Fix 5 + 6 + 7 + 8"
+     },
+     ":12080013339_c0": {
+      "mod": "inteligent",
+      "reguli": "Fix 5 + 6 + 7 + 8"
+     },
+     ":12080013341_c0": {
+      "mod": "original"
+     },
+     ":12159533179_c0": {
+      "mod": "inteligent",
+      "reguli": "Fix 5 + 6 + 7 + 8"
+     },
+     ":2283248927_c0": {
+      "mod": "original"
+     },
+     ":3086446449_c0": {
+      "mod": "inteligent",
+      "reguli": "Fix 5 + 6 + 7 + 8"
+     },
+     ":6413766794_c0": {
+      "mod": "inteligent",
+      "reguli": "Fix 5 + 6 + 7 + 8"
+     },
+     ":6413766796_c0": {
+      "mod": "inteligent",
+      "reguli": "Fix 5 + 6 + 7 + 8"
+     },
+     ":6413766797_c0": {
+      "mod": "original"
+     },
+     ":6413766797_c1": {
+      "mod": "original"
+     },
+     ":9804260085_c0": {
+      "mod": "original"
+     },
+     ":9804260097_c0": {
+      "mod": "original"
+     },
+     ":9804260103_c0": {
+      "mod": "original"
+     },
+     ":9840046264_c0": {
+      "mod": "original"
+     },
+     ":cluster_2942970567_9840046292_c0": {
+      "mod": "original"
+     }
+    },
+    "reguli": {
+     "Sistemul tau (hold 12 s)": {},
+     "Sistemul tau + fix 5": {
+      "fix5": true
+     },
+     "Sistemul tau + fix 6, 7, 8": {
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fix 5 + 6 + 7 + 8": {
+      "fix5": true,
+      "fix6": true,
+      "fix7": true,
+      "fix8": true
+     },
+     "Fara hold": {
+      "hold": "none"
+     }
+    },
+    "perechi": [
+     [
+      ":12043430980_c0",
+      ":6413766796_c0"
+     ],
+     [
+      ":10616411210_c0",
+      ":10616411211_c0"
+     ]
+    ],
+    "semafor": {
+     "verde_masini": 45.0,
+     "galben": 3.0,
+     "tot_rosu": 2.0,
+     "walk": 10.0,
+     "clear": 5.0,
+     "la_cerere": false
+    },
+    "nerabdare": null,
+    "nerabdare_dupa": 40.0,
+    "nerabdare_prob": 0.05,
+    "fara_faza_pietoni": true
+   }
+  }
+ ]
+}

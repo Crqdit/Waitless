@@ -1,0 +1,141 @@
+PODU ROS - SIMULARE STANDALONE (FARA SUMO) CU TRECERI INTELIGENTE
+==================================================================
+
+INSTALARE
+   Pune folderul "podu_sim" si fisierul "podu_sim.bat" in folderul PoduRos_SUMO
+   (langa "retea", "trafic", "scenarii"). Nu trebuie instalat nimic: doar Python (ai 3.15).
+   Programul citeste direct fisierele proiectului: retea\podu_ros.net.xml si trafic\*.xml.
+
+PORNIRE
+   Dublu-click pe podu_sim.bat   sau   py podu_sim\podu_sim.py
+   Prima pornire citeste reteaua (cateva secunde) si o tine apoi in cache.
+
+CE VEZI PE HARTA
+   - Eticheta mov = trecere cu SISTEMUL NOSTRU, cu starea ei (verde masini / countdown 12 s / HOLD /
+     VERDE pietoni / eliberare) si cati oameni vad placile. Albastru = semafor normal, gri = semafor
+     original, gri deschis = zebra (etichetele celorlalte treceri apar la zoom mare sau cand le selectezi).
+   - Dungile trecerii: verzi = pietonii au verde, portocalii = eliberare, rosiatice = rosu, albe = zebra.
+   - Linia colorata de la capatul benzii = semaforul masinilor pentru acea trecere.
+   - Senzorii trecerii selectate, pe carosabil: mov = zona de viraj (senzor 2), portocaliu = senzor 1,
+     galben = senzor 0. Se aprind (culoare plina) cand vad o masina. Poti alege "toate" sau "deloc".
+   - De la zoom 5 se vad placile, dala cu dala; pietonii care asteapta stau pe dalele lor.
+   - "Ce s-a intamplat": jurnalul trecerii selectate, de ex.
+       03:58 placile: 3 persoane -> countdown 19 s
+       04:51 HOLD - 2 masini pe senzori (1 in zona de viraj, 1 pe senzorul 1) trec intai
+       04:57 galben pentru masini - hold terminat dupa 6 s (au trecut toate)
+       05:01 VERDE pietoni
+   - "Mergi la trecerea" sare direct la o trecere (cele cu sistemul nostru sunt primele).
+   Schimbarile din Treceri / Reguli / Altele se aplica imediat, fara repornire.
+   La prima pornire, sistemul nostru e pus pe cele 8 treceri din SUMO.
+
+TABURI
+   Simulare   Alegi nivelul, "Trafic x", seed-ul si minutele. Start / Pauza / Reporneste.
+              Viteza: 0.5x ... Maxim.
+              Harta: trage ca s-o muti, rotita = zoom. De la zoom ~5 px/m se vad placile,
+              dala cu dala (galben -> maro = mai multa greutate).
+              Click pe o trecere: vezi starea ei, cati oameni detecteaza placile fata de cati sunt,
+              zona de viraj (cate masini / cate incap), senzorii 1 si 0, rata de viraj invatata
+              si riscul de blocare. Butoane: "Adauga persoana" (adult / copil / adult greu) la una
+              din cele doua parti si "Masina in pana" (prima masina care vine spre trecere sta 45 s).
+   Treceri    Pentru fiecare din cele 20 de treceri: Original / Zebra / Semafor normal /
+              Sistemul nostru, si ce set de reguli foloseste.
+              Click pe un rand il bifeaza (☑). Bifezi oricate, apoi "Schimba modul" sau
+              "Schimba regulile" se aplica la toate cele bifate deodata. Bifare rapida: Tot, Nimic,
+              Cele 8 din SUMO, Doar cu masini, tot ce e pe un anumit mod, sau o zona (C1...C7).
+              Pe harta, Ctrl + click pe o trecere o bifeaza / debifeaza.
+              In tabul Reguli, "Pune acest set pe trecerile bifate" face acelasi lucru.
+              Perechile A-B (pentru fix 3 si fix 5) se editeaza tot aici.
+   Reguli     Seturile de reguli ale sistemului nostru. Poti avea oricate (Nou / Copiaza / ...).
+              Fiecare set contine:
+                - placile: cum numara (perfect / dale + greutate ca in crossing_sim.py / doar greutate /
+                  doar dale), cat stai pe placa pana esti numarat, ce greutati se ignora, marimea placii
+                - countdown-ul: 25 s, minus 2 s de persoana, minim 10 s (modificabile)
+                - timpii semaforului: galben, tot rosu, verde pietoni, eliberare, verde minim masini
+                - senzorii: 0, 1, 2 pornit/oprit, lungimi, daca numara sau doar vad "ocupat",
+                  probabilitatea sa rateze o masina
+                - regula pentru masinile de pe senzori cand se termina countdown-ul:
+                  fara hold / hold 60 s total / hold 12 s maxim
+                - fix-urile 2-8, fiecare cu parametrii lui
+   Altele     Semaforul normal (ciclu fix sau la cerere) pentru trecerile fara semafor, pietonii
+              nerabdatori (traverseaza pe rosu dupa X secunde daca nu vine nimic), si saritul peste
+              faza exclusiva pentru pietoni a semafoarelor existente.
+   Comparare  "Adauga configuratia curenta" pune in lista exact ce ai setat acum (moduri + reguli).
+              "Adauga modele" pune: original, toate zebre, semafoare normale, sistemul nostru pe 8
+              treceri cu primele seturi de reguli. Alegi minutele, repetarile si cate rulari in
+              paralel. Toate configuratiile primesc acelasi trafic si aceleasi seed-uri.
+              Rezultat: tabel (medie ± variatie, ★ = cel mai bun), grafic in timp, si fisiere
+              CSV + TXT in rezultate\podu_sim\.
+
+CE INSEAMNA MODURILE
+   Original         ca in reteaua SUMO: zebra unde e zebra, programul semaforului unde e semafor
+   Zebra            fara semafor, pietonul are prioritate, masinile cedeaza
+   Semafor normal   unde exista deja semafor (pod, Nicolina): programul original;
+                    in rest: ciclu fix (verde masini 45 s, galben 3, tot rosu 2, verde pietoni 10,
+                    eliberare 5), modificabil in tabul Altele
+   Sistemul nostru  placi + countdown + senzori + regulile setului ales
+
+SENZORII DE MASINA (cum i-am inteles)
+   Cand se termina countdown-ul, masinile care sunt DEJA pe senzorul 1 (ultimii 25 m ai benzii
+   comune, inainte de viraj) sau in zona de viraj (senzorul 2, intre viraj si trecere) sunt lasate
+   sa treaca inainte ca pietonii sa primeasca verde (hold). Hold-ul se termina cand au trecut
+   toate, sau la limita aleasa (12 s / 60 s total). Masinile care ajung dupa aceea nu mai sunt
+   asteptate. Zona de viraj si senzorii se gasesc singuri pentru fiecare trecere, din retea:
+   programul merge inapoi pe benzi de la trecere pana la locul unde masinile care vireaza se
+   despart de cele care merg drept. Daca locul e mai departe de 120 m, trecerea e de tip A
+   (senzorii sunt doar pe drumul dinainte de trecere).
+
+CE E LA FEL CA IN SUMO
+   Aceeasi retea, aceleasi benzi si legaturi, aceleasi tabele de prioritate din fiecare intersectie,
+   aceleasi programe de semafor (si cele actuate), acelasi trafic (fisierele din trafic\),
+   aceleasi tipuri de soferi (viteza, acceleratie, franare, "neatentie"), pas de 0.5 s,
+   modelul Krauss pentru urmarire, tramvaie cu statii, urgente care trec pe rosu incet,
+   teleportare dupa timpul din nivel, rerutare pentru 30 % din masini la 120 s.
+
+REPARATII (versiunea aceasta)
+   - BLOCAJELE "ETERNE": o masina ajungea pe o banda care nu ducea unde avea nevoie (de obicei pe o
+     bucata de strada de 0.2 m, unde nu poate schimba banda) si statea acolo pana la teleportare
+     (10 minute la ora de varf), iar coada din spatele ei umplea giratoriul. Acum masinile isi aleg
+     banda privind 600 m inainte (nu 260 m), iar daca tot ajung pe o banda gresita o iau pe unde pot
+     si isi recalculeaza drumul, ca un sofer real.
+   - simularea e acum perfect reproductibila: acelasi seed da exact acelasi rezultat (inainte ordinea
+     masinilor depindea de memoria calculatorului). Comparatiile sunt deci corecte: fiecare
+     configuratie primeste exact acelasi trafic.
+   - masinile nu se mai opresc pe zebra cand e coada in fata: opresc inaintea ei; nu intra pe zebra
+     daca cel din fata incetineste si nu au loc dupa ea; daca imediat dupa zebra trebuie sa cedeze
+     (de ex. la intrarea in giratoriu), intra pe zebra doar cu o marja de siguranta
+   - vehiculele isi anunta intersectia de la 120 m (inainte 70 m), ca sa fie vazute din timp
+   - pe harta se vad acum semafoarele TUTUROR intersectiilor (linia colorata de la capatul benzii),
+     nu doar ale trecerilor; inainte, o masina care astepta un semafor de intersectie aflat chiar dupa
+     zebra parea oprita "in mijlocul strazii"
+   - placile sunt desenate rotite odata cu trecerea si nu mai intra peste trecerea vecina
+     (pe refugiile inguste placa are mai putine randuri de dale)
+   - la zebre masinile opresc si pentru pietonii care ASTEAPTA pe trotuar (nu doar pentru cei de pe zebra);
+     pietonii nu mai pasesc in fata unei masini care nu mai poate frana
+   - pietonii trec printre masinile blocate pe zebra (ca in realitate) in loc sa astepte la nesfarsit
+   - la verde, pietonii nu pornesc in fata unei masini care e deja in intersectie
+   - virajele la stanga in doua etape cedeaza la jumatatea intersectiei (ca in SUMO)
+   - fiecare vehicul isi anunta urmatoarea intersectie si cand are pe cineva in fata
+   - o masina oprita peste care trece un pieton nu mai e numarata drept coliziune
+   - harta: carosabil mai inchis, linii intre benzi, sageti pentru sensul in giratoriu, sine de tramvai,
+     trecerile au contur verde/rosu/portocaliu dupa semaforul pietonilor, masinile au parbriz (vezi sensul)
+
+CE E SIMPLIFICAT (de aceea cifrele nu vor fi identice cu SUMO)
+   - schimbarea benzii: varianta simpla (banda buna pentru traseu, mers pe dreapta, depasire)
+   - pietonii merg liber pe trotuare (nu se impiedica unii de altii); asteapta doar la treceri
+   - coliziunile se numara cand doi participanti sunt in acelasi punct de conflict in acelasi timp
+   - nu e fundal din satelit pe harta
+   Comparatiile intre configuratii sunt corecte (toate merg pe acelasi model), dar valorile
+   absolute pot diferi fata de SUMO.
+
+DE STIUT DIN STREET VIEW / OSM
+   La Bd. Socola (C6) si pe Bd. Tutora se vad semafoare in Street View, iar in retea sunt zebre.
+   Poti pune acele treceri pe "Semafor normal" ca sa fie mai aproape de realitate.
+
+FISIERE
+   podu_sim.py   fereastra
+   motor.py      simularea (masini, tramvaie, pietoni, intersectii, semafoare)
+   treceri.py    placile, senzorii si toate regulile (aici sunt si valorile implicite)
+   retea.py      citirea retelei SUMO
+   cerere.py     citirea traficului
+   rulare.py     rulare fara fereastra (o foloseste comparatia; merge si din linia de comanda)
+   setari.json   setarile tale (se creeaza singur)
